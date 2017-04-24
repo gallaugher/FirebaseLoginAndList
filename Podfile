@@ -8,4 +8,5 @@ target 'LearnFirebase' do
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'Firebase/Storage'
+    pod 'GooglePlaces'
 end

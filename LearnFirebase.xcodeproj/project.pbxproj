@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				3E58C5251EA25CC90054AEF6 /* AppDelegate.swift */,
+				3E9C80981EA4406700F99E33 /* ListItem.swift */,
 				3E3A220E1EA3D31C007DDF38 /* SignInViewController.swift */,
 				3E58C5271EA25CC90054AEF6 /* ListViewController.swift */,
 				3E58C5371EA25D340054AEF6 /* DetailViewController.swift */,
@@ -86,7 +87,6 @@
 				3E58C52E1EA25CC90054AEF6 /* LaunchScreen.storyboard */,
 				3E58C5311EA25CC90054AEF6 /* Info.plist */,
 				3ED6CB211EA3D04C00858B3A /* GoogleService-Info.plist */,
-				3E9C80981EA4406700F99E33 /* ListItem.swift */,
 			);
 			path = LearnFirebase;
 			sourceTree = "<group>";

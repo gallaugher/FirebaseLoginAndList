@@ -9,7 +9,10 @@
 import Foundation
 
 class ListItem {
-    var listItem = ""
+    var placeName = ""
     var postedBy = ""
     var listItemKey = ""
+    var latitude = 0.0
+    var longitude = 0.0
+    var address = ""
 }

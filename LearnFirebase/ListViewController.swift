@@ -15,6 +15,7 @@ class ListViewController: UIViewController {
     var listItemArray = [ListItem]()
     var rootRef: FIRDatabaseReference!
     var itemsRef: FIRDatabaseReference!
+    var reviewsRef: FIRDatabaseReference!
     var userEmail = ""
     
     @IBOutlet weak var addButtonItem: UIBarButtonItem!
@@ -27,6 +28,7 @@ class ListViewController: UIViewController {
         
         rootRef = FIRDatabase.database().reference()
         itemsRef = FIRDatabase.database().reference(withPath: "items")
+        reviewsRef = FIRDatabase.database().reference(withPath: "reviews")
         
         itemsRef.observe(.value, with: { snapshot in
             self.listItemArray = []
@@ -113,8 +115,40 @@ class ListViewController: UIViewController {
                     photoDictionary[fileName] = userEmail
                 }
                 
+                // Create a dictionary of all reviews at this location
+                var reviewDictionary = [String : Any]()
+                
+                for review in (source.listItem?.reviews)! {
+                    var ratingsEntry = [String: Any]()
+                    ratingsEntry["reviewHeadline"] = review.reviewHeadline
+                    ratingsEntry["reviewText"] = review.reviewText
+                    ratingsEntry["rating"] = review.rating
+                    
+                    let newReviewIndexRef = self.reviewsRef.child(newLocationKey).childByAutoId()
+                    let newReviewRefKey = newReviewIndexRef.key
+                    reviewDictionary["\(newReviewRefKey)"] = ratingsEntry
+                }
+
+                /*
+        - reviewIndex
+            - unique item key (locationKey)
+                 - uniqueReviewKey
+                        - reviewHeadline
+                        - reviewText
+                        - userName
+                        - rating
+                        - reviewBy
+                 - anotherUniqueReviewKey
+                    - reviewHeadline
+                    - reviewText
+                    - userName
+                    - rating
+                    - reviewBy
+                */
+                
                 // Create the data we want to update
-                let updatedUserData = ["items/\(newLocationKey)": ["placeName": newItem.placeName, "postedBy": userEmail, "listItemKey": listItemKey, "latitude": newItem.latitude, "longitude": newItem.longitude, "address": newItem.address], "photoIndex/\(newLocationKey)": photoDictionary]
+                
+                let updatedUserData = ["items/\(newLocationKey)": ["placeName": newItem.placeName, "postedBy": userEmail, "listItemKey": listItemKey, "latitude": newItem.latitude, "longitude": newItem.longitude, "address": newItem.address], "reviews/\(newLocationKey)": reviewDictionary, "photoIndex/\(newLocationKey)": photoDictionary]
                 // Do a deep-path update
                 rootRef.updateChildValues(updatedUserData, withCompletionBlock: { (error, ref) -> Void in
                     if (error != nil) {
@@ -136,8 +170,22 @@ class ListViewController: UIViewController {
                     photoDictionary[fileName] = userEmail
                 }
                 
+                // Create a dictionary of all reviews at this location
+                var reviewDictionary = [String : Any]()
+                
+                for review in (source.listItem?.reviews)! {
+                    var ratingsEntry = [String: Any]()
+                    ratingsEntry["reviewHeadline"] = review.reviewHeadline
+                    ratingsEntry["reviewText"] = review.reviewText
+                    ratingsEntry["rating"] = review.rating
+                    
+                    let newReviewIndexRef = self.reviewsRef.child(newLocationKey).childByAutoId()
+                    let newReviewRefKey = newReviewIndexRef.key
+                    reviewDictionary["\(newReviewRefKey)"] = ratingsEntry
+                }
+                
                 // Create the data we want to update
-                let updatedUserData = ["items/\(newLocationKey)": ["placeName": newItem.placeName, "postedBy": userEmail, "listItemKey": newItem.listItemKey, "latitude": newItem.latitude, "longitude": newItem.longitude, "address": newItem.address], "photoIndex/\(newLocationKey)": photoDictionary]
+                let updatedUserData = ["items/\(newLocationKey)": ["placeName": newItem.placeName, "postedBy": userEmail, "listItemKey": newItem.listItemKey, "latitude": newItem.latitude, "longitude": newItem.longitude, "address": newItem.address], "reviews/\(newLocationKey)": reviewDictionary,"photoIndex/\(newLocationKey)": photoDictionary]
                 // Do a deep-path update
                 rootRef.updateChildValues(updatedUserData, withCompletionBlock: { (error, ref) -> Void in
                     if (error != nil) {

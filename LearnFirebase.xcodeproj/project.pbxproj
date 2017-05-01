@@ -15,8 +15,14 @@
 		3E58C52D1EA25CC90054AEF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E58C52C1EA25CC90054AEF6 /* Assets.xcassets */; };
 		3E58C5301EA25CC90054AEF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E58C52E1EA25CC90054AEF6 /* LaunchScreen.storyboard */; };
 		3E58C5381EA25D340054AEF6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58C5371EA25D340054AEF6 /* DetailViewController.swift */; };
+		3E6905361EB6B3E600F87986 /* SelectImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6905351EB6B3E600F87986 /* SelectImageViewController.swift */; };
+		3E87FFF31EB757C700818DF2 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87FFF21EB757C700818DF2 /* RatingViewController.swift */; };
+		3E87FFF51EB766E300818DF2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87FFF41EB766E300818DF2 /* RatingControl.swift */; };
+		3E87FFF71EB7798F00818DF2 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87FFF61EB7798F00818DF2 /* RatingTableViewCell.swift */; };
+		3E87FFF91EB77BBA00818DF2 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E87FFF81EB77BBA00818DF2 /* Review.swift */; };
 		3E9C80991EA4406700F99E33 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C80981EA4406700F99E33 /* ListItem.swift */; };
 		3ED6CB221EA3D04C00858B3A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ED6CB211EA3D04C00858B3A /* GoogleService-Info.plist */; };
+		3EE1B4E51EB6CC5E00E2747D /* LocationImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1B4E41EB6CC5E00E2747D /* LocationImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +35,14 @@
 		3E58C52F1EA25CC90054AEF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E58C5311EA25CC90054AEF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E58C5371EA25D340054AEF6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3E6905351EB6B3E600F87986 /* SelectImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectImageViewController.swift; sourceTree = "<group>"; };
+		3E87FFF21EB757C700818DF2 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		3E87FFF41EB766E300818DF2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		3E87FFF61EB7798F00818DF2 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		3E87FFF81EB77BBA00818DF2 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		3E9C80981EA4406700F99E33 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		3ED6CB211EA3D04C00858B3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3EE1B4E41EB6CC5E00E2747D /* LocationImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		462064FF1F13D9D089E0B43A /* Pods_LearnFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54AFAC0E15175D680075678 /* Pods-LearnFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebase/Pods-LearnFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		F70AD319A48953ADF92211FB /* Pods-LearnFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebase/Pods-LearnFirebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,9 +91,15 @@
 			children = (
 				3E58C5251EA25CC90054AEF6 /* AppDelegate.swift */,
 				3E9C80981EA4406700F99E33 /* ListItem.swift */,
+				3E87FFF81EB77BBA00818DF2 /* Review.swift */,
 				3E3A220E1EA3D31C007DDF38 /* SignInViewController.swift */,
 				3E58C5271EA25CC90054AEF6 /* ListViewController.swift */,
 				3E58C5371EA25D340054AEF6 /* DetailViewController.swift */,
+				3E87FFF41EB766E300818DF2 /* RatingControl.swift */,
+				3EE1B4E41EB6CC5E00E2747D /* LocationImageCollectionViewCell.swift */,
+				3E87FFF61EB7798F00818DF2 /* RatingTableViewCell.swift */,
+				3E6905351EB6B3E600F87986 /* SelectImageViewController.swift */,
+				3E87FFF21EB757C700818DF2 /* RatingViewController.swift */,
 				3E58C5291EA25CC90054AEF6 /* Main.storyboard */,
 				3E58C52C1EA25CC90054AEF6 /* Assets.xcassets */,
 				3E58C52E1EA25CC90054AEF6 /* LaunchScreen.storyboard */,
@@ -225,10 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E87FFF91EB77BBA00818DF2 /* Review.swift in Sources */,
 				3E9C80991EA4406700F99E33 /* ListItem.swift in Sources */,
+				3E87FFF31EB757C700818DF2 /* RatingViewController.swift in Sources */,
+				3E87FFF71EB7798F00818DF2 /* RatingTableViewCell.swift in Sources */,
 				3E3A220F1EA3D31C007DDF38 /* SignInViewController.swift in Sources */,
+				3E6905361EB6B3E600F87986 /* SelectImageViewController.swift in Sources */,
+				3E87FFF51EB766E300818DF2 /* RatingControl.swift in Sources */,
 				3E58C5381EA25D340054AEF6 /* DetailViewController.swift in Sources */,
 				3E58C5281EA25CC90054AEF6 /* ListViewController.swift in Sources */,
+				3EE1B4E51EB6CC5E00E2747D /* LocationImageCollectionViewCell.swift in Sources */,
 				3E58C5261EA25CC90054AEF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
